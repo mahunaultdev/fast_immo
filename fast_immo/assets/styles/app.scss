@@ -1,0 +1,43 @@
+@import "~@fortawesome/fontawesome-free/css/all.min.css";
+@import "~bootstrap/scss/bootstrap";
+
+body {
+    background-color: lightgray;
+}
+.modal-body button{
+
+    background :#81a6ea;
+    border : none;
+}
+
+.modal-body button:hover{
+
+    background : #ffffff;
+}
+
+.jumbotron {
+
+    background: #81a6ea;
+    border-radius: 50px;
+    opacity: 1;
+}
+
+.btn {
+    font-weight: 600;
+    border : 2px solid #ffffff;
+}
+.btn:hover {
+    background-color: #ffffff;
+    color:#81a6ea ;
+}
+
+.inscription{
+
+    font-family: 'Open Sans', sans-serif;
+    color : #81a6ea;
+    font-weight: 700;
+
+}
+label {
+    font-weight: 600;
+}
