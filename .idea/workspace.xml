@@ -2,16 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="efd9c4f6-ac95-40fe-bd70-de485378f449" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/fast_immo/assets/styles/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/fast_immo/assets/styles/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fast_immo/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/fast_immo/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fast_immo/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/fast_immo/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fast_immo/templates/formulaire_contact/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/fast_immo/templates/formulaire_contact/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/fast_immo/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -150,7 +150,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611224060995</updated>
-      <workItem from="1611224062452" duration="12251000" />
+      <workItem from="1611224062452" duration="13988000" />
+      <workItem from="1611244738605" duration="875000" />
+      <workItem from="1611304540360" duration="3000" />
+      <workItem from="1611304580278" duration="1765000" />
     </task>
     <servers />
   </component>
