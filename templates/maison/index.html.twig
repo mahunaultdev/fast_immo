@@ -3,18 +3,82 @@
 {% block title %}Hello MaisonController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+			integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+			integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+			crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+			integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+			crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+			integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+			crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+			integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+			<link rel="preconnect" href="https://fonts.gstatic.com">
+			<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Raleway:wght@300&display=swap" rel="stylesheet">
+			<link rel="preconnect" href="https://fonts.gstatic.com">
+			<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Raleway:wght@300;600;700&display=swap" rel="stylesheet"> 
+			<link rel="stylesheet" href="style.css">
+	</head>
+	
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<body>
+    
+    <main>
+        <div class="center">
+		<h2>Vente Maison / Villa 140 m² Milly-la-Forêt</h2> 
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/Maxime/Desktop/fastimmo/fast_immo/src/Controller/MaisonController.php'|file_link(0) }}">src/Controller/MaisonController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/Maxime/Desktop/fastimmo/fast_immo/templates/maison/index.html.twig'|file_link(0) }}">templates/maison/index.html.twig</a></code></li>
-    </ul>
-</div>
+		<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+			<ol class="carousel-indicators">
+			  <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+			  <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+			  <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+			</ol>
+			<div class="carousel-inner">
+			  <div class="carousel-item active">
+				<img src="img/facade.jpg" class="d-block w-100" alt="facade">
+			  </div>
+			  <div class="carousel-item">
+				<img src="img/piscine.jpg" class="d-block w-100" alt="piscine">
+			  </div>
+			  <div class="carousel-item">
+				<img src="img/p1510144.jpg" class="d-block w-100" alt="garage">
+			  </div>
+			</div>
+			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+			  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			  <span class="visually-hidden">Previous</span>
+			</a>
+			<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
+			  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+			  <span class="visually-hidden">Next</span>
+			</a>
+		  </div>
+
+
+
+
+
+
+
+
+
+
+        <img id="#" src="" alt="#">
+		</div>
+        
+    <p>À propos de cette maison / villa 5 pièces à Milly-la-Forêt
+		L’avis du professionnel
+		Votre agence Fast Immo : Dans un secteur calme et proche de la forêt, une maison de 140 m² sur un terrain de 565 m². Deux dépendances, une piscine chauffée. Dans un village au Nord de Milly-la-Forêt, cette belle maison totalement rénovée et entretenue vous propose au rez-de-chaussée: une entrée spacieuse de 10 m² avec un espace buanderie, un séjour lumineux, une cuisine de 18 m² toute équipée, une chambre de 13 m² avec des placards, une salle d'eau, un WC. Au 1er étage: deux grandes chambres de 28 et 17 m² chacune, une salle d'eau, un WC. Deux dépendances de 25 et 15 m² chacune. Une piscine chauffée de 6X4 m sans vis à vis. Un jardin arboré de 565 m² arboré. VOTRE AGENCE Fast Immo .
+		
+		Demander plus d'informations à l'agence</p><p>417 000,00 €</p>
+    
+        
+    </main>
+    
+    
 {% endblock %}
