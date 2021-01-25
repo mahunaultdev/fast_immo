@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use App\Repository\AnnoncesRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\HttpFoundation\File\File;
 
 /**
  * @ORM\Entity(repositoryClass=AnnoncesRepository::class)
@@ -38,7 +40,7 @@ class Annonces
     private $ville;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text")
      */
     private $description;
 
@@ -63,6 +65,12 @@ class Annonces
     private $prix;
 
     /**
+     * @Assert\Image(
+     *     minWidth = 200,
+     *     maxWidth = 400,
+     *     minHeight = 200,
+     *     maxHeight = 400
+     * )
      * @ORM\Column(type="string", length=255)
      */
     private $photo;

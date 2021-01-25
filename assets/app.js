@@ -13,3 +13,4 @@ const $ = require('jquery');
 require('bootstrap');
 require('jquery.easing')($);
 const ScrollReveal = require('scrollreveal');
+

@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use App\Repository\UtilisateursRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity(repositoryClass=UtilisateursRepository::class)
@@ -18,11 +20,13 @@ class Utilisateurs
     private $id;
 
     /**
+     * @Assert\Regex(pattern= "/^[A-Za-z0-9_.]+$/")
      * @ORM\Column(type="string", length=255)
      */
     private $nom;
 
     /**
+     * @Assert\Regex(pattern= "/^[A-Za-z0-9_.]+$/")
      * @ORM\Column(type="string", length=255)
      */
     private $prenom;
