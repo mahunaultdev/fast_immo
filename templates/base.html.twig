@@ -27,26 +27,20 @@
                             <li class="nav-item">
                                 <a class="nav-link active" href="{{ path("accueil") }}">Accueil</a>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Maison
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ path("maison") }}">A vendre</a>
-                                    
-                                </div>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path("maison") }}">Maison</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ path("equipe") }}">Equipe</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="contact.html">Contact</a>
+                                <a class="nav-link" href="{{ path("formulairecontact") }}">Contact</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path("inscription") }}">Inscription</a>
                             </li>
                         </ul>
                     </div>
-                    <button type="button" class="btn btn-b-n navbar-toggle-box-collapse d-none d-md-block" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-expanded="false">
-                        <span class="fa fa-search" aria-hidden="true"></span>
-                    </button>
                 </div>
             </nav><!-- End Header/Navbar -->
         {% endblock %}
@@ -63,35 +57,35 @@
                                 </div>
                                 <div class="w-body-a">
                                     <p class="w-text-a color-text-a">
-                                        Agence de recherche de maison simple et rapide. Vous pouvez nous contactez avec les informations suivantes.
+                                        EXPERT EN IMMOBILIER DE LUXE À MONACO 
                                     </p>
                                 </div>
-                                <div class="w-footer-a">
-                                    <ul class="list-unstyled">
-                                        <li class="color-a">
-                                            <span class="color-text-a">Phone .</span> Immo@fastImmo.com</li>
-                                        <li class="color-a">
-                                            <span class="color-text-a">Email .</span> +33 1 45469505</li>
-                                    </ul>
+                                
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-4 section-md-t3">
+                            <div class="widget-a">
+                                <div class="w-header-a">
+                                   
+                                </div>
+                                <div class="w-body-a">
+                                    <div class="w-body-a">
+                                        
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-4 section-md-t3">
                             <div class="widget-a">
                                 <div class="w-header-a">
-                                    <h3 class="w-title-a text-brand">L'agence</h3>
+                                    <h3 class="w-title-a text-brand">Mentions Légal</h3>
                                 </div>
                                 <div class="w-body-a">
                                     <div class="w-body-a">
                                         <ul class="list-unstyled">
+                                            
                                             <li class="item-list-a">
-                                                <i class="fa fa-angle-right"></i> <a href="#">Site Map</a>
-                                            </li>
-                                            <li class="item-list-a">
-                                                <i class="fa fa-angle-right"></i> <a href="{{ path("equipe") }}">Equipe</a>
-                                            </li>
-                                            <li class="item-list-a">
-                                                <i class="fa fa-angle-right"></i> <a href="#">Legal</a>
+                                                <i class="fa fa-angle-right"></i> <a href="{{ path("mention") }}">Legal</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -110,15 +104,13 @@
                                     <li class="list-inline-item">
                                         <a href="{{ path("accueil") }}">Accueil</a>
                                     </li>
-                                    <li class="list-inline-item">
-                                        <a href="#">Contact</a>
-                                    </li>
+                                    
                                 </ul>
                             </nav>
                             <div class="copyright-footer">
                                 <p class="copyright color-text-a">
                                     &copy; Copyright
-                                    <span class="color-a">Fast Immo</span> All Rights Reserved.
+                                    <span class="color-a">Luxe Immo</span> All Rights Reserved.
                                 </p>
                             </div>
                         </div>
