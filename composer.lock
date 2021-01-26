@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "6e86f95b51456510366d222db8f18c9f",
+=======
+    "content-hash": "320d2245b0286a4bd743c7781e61d04c",
+>>>>>>> 0ea51ba11d7bf21a6a652c83eb9b35afb4d18fc8
     "packages": [
         {
             "name": "composer/package-versions-deprecated",
@@ -7847,6 +7851,7 @@
             "time": "2021-01-19T11:35:18+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "webmozart/assert",
             "version": "1.9.1",
             "source": {
@@ -7902,6 +7907,8 @@
     ],
     "packages-dev": [
         {
+=======
+>>>>>>> 0ea51ba11d7bf21a6a652c83eb9b35afb4d18fc8
             "name": "symfony/browser-kit",
             "version": "v4.4.18",
             "source": {
