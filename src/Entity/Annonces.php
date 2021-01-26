@@ -82,6 +82,16 @@ class Annonces
      */
     private $mail_pr;
 
+    /**
+     * @ORM\Column(type="string", length=10, nullable=true)
+     */
+    private $nbr_sdb;
+
+    /**
+     * @ORM\Column(type="string", length=10, nullable=true)
+     */
+    private $nbr_garage;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -239,6 +249,30 @@ class Annonces
     public function setMailPr(?string $mail_pr): self
     {
         $this->mail_pr = $mail_pr;
+
+        return $this;
+    }
+
+    public function getNbrSdb(): ?string
+    {
+        return $this->nbr_sdb;
+    }
+
+    public function setNbrSdb(?string $nbr_sdb): self
+    {
+        $this->nbr_sdb = $nbr_sdb;
+
+        return $this;
+    }
+
+    public function getNbrGarage(): ?string
+    {
+        return $this->nbr_garage;
+    }
+
+    public function setNbrGarage(?string $nbr_garage): self
+    {
+        $this->nbr_garage = $nbr_garage;
 
         return $this;
     }
