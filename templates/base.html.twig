@@ -27,26 +27,21 @@
                             <li class="nav-item">
                                 <a class="nav-link active" href="{{ path("accueil") }}">Accueil</a>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Maison
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ path("maison") }}">A vendre</a>
-                                    <a class="dropdown-item" href="agents-grid.html">A louer</a>
-                                </div>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path("maison") }}">Maison</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ path("equipe") }}">Equipe</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="contact.html">Contact</a>
+                                <a class="nav-link" href="{{ path("formulairecontact") }}">Contact</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path("inscription") }}">Inscription</a>
+                            </li>
+
                         </ul>
                     </div>
-                    <button type="button" class="btn btn-b-n navbar-toggle-box-collapse d-none d-md-block" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-expanded="false">
-                        <span class="fa fa-search" aria-hidden="true"></span>
-                    </button>
                 </div>
             </nav><!-- End Header/Navbar -->
         {% endblock %}
@@ -86,9 +81,6 @@
                                         <ul class="list-unstyled">
                                             <li class="item-list-a">
                                                 <i class="fa fa-angle-right"></i> <a href="#">Site Map</a>
-                                            </li>
-                                            <li class="item-list-a">
-                                                <i class="fa fa-angle-right"></i> <a href="{{ path("equipe") }}">Equipe</a>
                                             </li>
                                             <li class="item-list-a">
                                                 <i class="fa fa-angle-right"></i> <a href="#">Legal</a>
