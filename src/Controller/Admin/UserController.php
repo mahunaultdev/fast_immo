@@ -23,6 +23,8 @@ class UserController extends AbstractDashboardController
 
     public function configureDashboard(): Dashboard
     {
+        // or add an optional message - seen by developers
+        $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'User tried to access a page without having ROLE_ADMIN');
         return Dashboard::new()
             ->setTitle('Fastimmo');
     }
@@ -32,6 +34,6 @@ class UserController extends AbstractDashboardController
         yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('Users', 'fas fa-list', User::class);
         yield MenuItem::linkToCrud('Annonce', 'fas fa-list', Annonces::class);
-        yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-list', Utilisateurs::class);
+        //yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-list', Utilisateurs::class);
     }
 }

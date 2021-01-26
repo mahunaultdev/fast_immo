@@ -4,11 +4,12 @@ namespace App\Entity;
 
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
  */
-class User
+class User implements UserInterface
 {
     /**
      * @ORM\Id
@@ -18,75 +19,110 @@ class User
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=180, unique=true)
      */
-    private $name;
+    private $username;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="json")
      */
-    private $email;
+    private $roles = [];
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $birthday;
-
-    /**
-     * @ORM\Column(type="integer")
+     * @var string The hashed password
+     * @ORM\Column(type="string")
      */
     private $password;
+
+    private ?string $plainPassword = null;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getName(): ?string
+    /**
+     * A visual identifier that represents this user.
+     *
+     * @see UserInterface
+     */
+    public function getUsername(): string
     {
-        return $this->name;
+        return (string) $this->username;
     }
 
-    public function setName(string $name): self
+    public function setUsername(string $username): self
     {
-        $this->name = $name;
+        $this->username = $username;
 
         return $this;
     }
 
-    public function getEmail(): ?string
+    /**
+     * @see UserInterface
+     */
+    public function getRoles(): array
     {
-        return $this->email;
+        $roles = $this->roles;
+        // guarantee every user at least has ROLE_GUEST
+        $roles[] = 'ROLE_GUEST';
+
+        return array_unique($roles);
     }
 
-    public function setEmail(string $email): self
+    public function setRoles(array $roles): self
     {
-        $this->email = $email;
+        $this->roles = $roles;
 
         return $this;
     }
 
-    public function getBirthday(): ?string
+    /**
+     * @see UserInterface
+     */
+    public function getPassword(): string
     {
-        return $this->birthday;
+        return (string) $this->password;
     }
 
-    public function setBirthday(string $birthday): self
-    {
-        $this->birthday = $birthday;
-
-        return $this;
-    }
-
-    public function getPassword(): ?int
-    {
-        return $this->password;
-    }
-
-    public function setPassword(int $password): self
+    public function setPassword(string $password): self
     {
         $this->password = $password;
 
         return $this;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function getSalt()
+    {
+        // not needed when using the "bcrypt" algorithm in security.yaml
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function eraseCredentials()
+    {
+        // If you store any temporary, sensitive data on the user, clear it here
+        // $this->plainPassword = null;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPlainPassword()
+    {
+        if( $this->plainPassword == null ) return "";
+        return $this->plainPassword;
+    }
+
+    /**
+     * @param string $plainPassword
+     */
+    public function setPlainPassword(string $plainPassword): void
+    {
+        $this->plainPassword = $plainPassword;
     }
 }
