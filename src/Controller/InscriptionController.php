@@ -17,4 +17,13 @@ class InscriptionController extends AbstractController
             'controller_name' => 'InscriptionController',
         ]);
     }
+    /**
+     * @Route("/connexion", name="connexion")
+     */
+    public function connexion(): Response
+    {
+        return $this->render('inscription/connexion.html.twig', [
+            'controller_name' => 'InscriptionController',
+        ]);
+    }
 }
