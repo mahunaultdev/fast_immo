@@ -2,10 +2,12 @@
 
 namespace App\Entity;
 
+
 use App\Repository\AnnoncesRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+
 
 /**
  * @Vich\Uploadable
@@ -21,22 +23,22 @@ class Annonces
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=50, nullable=true)
+     * @ORM\Column(type="string", length=255)
      */
     private $titre;
 
     /**
-     * @ORM\Column(type="string", length=100, nullable=true)
+     * @ORM\Column(type="string", length=255)
      */
     private $adresse;
 
     /**
-     * @ORM\Column(type="string", length=5, nullable=true)
+     * @ORM\Column(type="string", length=5)
      */
     private $cp;
 
     /**
-     * @ORM\Column(type="string", length=50, nullable=true)
+     * @ORM\Column(type="string", length=50)
      */
     private $ville;
 
@@ -46,39 +48,45 @@ class Annonces
     private $description;
 
     /**
-     * @ORM\Column(type="decimal", precision=5, scale=2, nullable=true)
+     * @ORM\Column(type="float")
      */
     private $surface;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="integer")
      */
     private $nbrDePieces;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="integer")
      */
     private $nbrDeChambres;
 
     /**
-     * @ORM\Column(type="decimal", precision=5, scale=2, nullable=true)
+     * @ORM\Column(type="float")
      */
     private $prix;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255)
      */
     private $photo;
 
+    /**
+     * @Vich\UploadableField(mapping="products", fileNameProperty="photo")
+     * @var File
+     * 
+     */
+    private $ImageFile;
     
 
     /**
-     * @ORM\Column(type="string", length=10, nullable=true)
+     * @ORM\Column(type="string", length=10)
      */
     private $telephonePr;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255)
      */
     private $nomPr;
 
@@ -86,16 +94,6 @@ class Annonces
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $mailPr;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $nbrSdb;
-
-    /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
-    private $nbrGarage;
 
     public function getId(): ?int
     {
@@ -107,7 +105,7 @@ class Annonces
         return $this->titre;
     }
 
-    public function setTitre(?string $titre): self
+    public function setTitre(string $titre): self
     {
         $this->titre = $titre;
 
@@ -119,7 +117,7 @@ class Annonces
         return $this->adresse;
     }
 
-    public function setAdresse(?string $adresse): self
+    public function setAdresse(string $adresse): self
     {
         $this->adresse = $adresse;
 
@@ -131,7 +129,7 @@ class Annonces
         return $this->cp;
     }
 
-    public function setCp(?string $cp): self
+    public function setCp(string $cp): self
     {
         $this->cp = $cp;
 
@@ -143,7 +141,7 @@ class Annonces
         return $this->ville;
     }
 
-    public function setVille(?string $ville): self
+    public function setVille(string $ville): self
     {
         $this->ville = $ville;
 
@@ -162,12 +160,12 @@ class Annonces
         return $this;
     }
 
-    public function getSurface(): ?string
+    public function getSurface(): ?float
     {
         return $this->surface;
     }
 
-    public function setSurface(?string $surface): self
+    public function setSurface(float $surface): self
     {
         $this->surface = $surface;
 
@@ -179,31 +177,31 @@ class Annonces
         return $this->nbrDePieces;
     }
 
-    public function setNbrDePieces(?int $nbrDePieces): self
+    public function setNbrDePieces(int $nbrDePieces): self
     {
-        $this->nbrDePieces = $nbrDePieces;
+        $this->nbrDePieces = $nbrdePieces;
 
         return $this;
     }
 
     public function getNbrDeChambres(): ?int
     {
-        return $this->nbrDeChambres;
+        return $this->nbrdechambres;
     }
 
-    public function setNbrDeChambres(?int $nbrDeChambres): self
+    public function setNbrDeChambres(int $nbrdechambres): self
     {
-        $this->nbrDeChambres = $nbrDeChambres;
+        $this->nbrdechambres = $nbrdechambres;
 
         return $this;
     }
 
-    public function getPrix(): ?string
+    public function getPrix(): ?float
     {
         return $this->prix;
     }
 
-    public function setPrix(?string $prix): self
+    public function setPrix(float $prix): self
     {
         $this->prix = $prix;
 
@@ -215,12 +213,14 @@ class Annonces
         return $this->photo;
     }
 
-    public function setPhoto(?string $photo): self
+    public function setPhoto(string $photo): self
     {
         $this->photo = $photo;
 
         return $this;
     }
+
+
 
     /**
      * @return File/null
@@ -251,7 +251,7 @@ class Annonces
         return $this->telephonePr;
     }
 
-    public function setTelephonePr(?string $telephonePr): self
+    public function setTelephonePr(string $telephonePr): self
     {
         $this->telephonePr = $telephonePr;
 
@@ -263,7 +263,7 @@ class Annonces
         return $this->nomPr;
     }
 
-    public function setNomPr(?string $nomPr): self
+    public function setNomPr(string $nomPr): self
     {
         $this->nomPr = $nomPr;
 
@@ -278,30 +278,6 @@ class Annonces
     public function setMailPr(?string $mailPr): self
     {
         $this->mailPr = $mailPr;
-
-        return $this;
-    }
-
-    public function getNbrSdb(): ?string
-    {
-        return $this->nbrSdb;
-    }
-
-    public function setNbrSdb(?string $nbrSdb): self
-    {
-        $this->nbrSdb = $nbrSdb;
-
-        return $this;
-    }
-
-    public function getNbrGarage(): ?int
-    {
-        return $this->nbrGarage;
-    }
-
-    public function setNbrGarage(?int $nbrGarage): self
-    {
-        $this->nbrGarage = $nbrGarage;
 
         return $this;
     }
